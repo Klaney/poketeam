@@ -1,0 +1,1 @@
+poketeam = angular.module('poketeam',[]);
