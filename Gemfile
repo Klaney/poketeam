@@ -26,6 +26,10 @@ gem 'bcrypt', '~> 3.1.7'
 #Use Angular Rails templates to allow rails to use angular routing
 gem 'angular-rails-templates'
 
+#FOR AUTH
+#email-validator
+gem 'email_validator'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

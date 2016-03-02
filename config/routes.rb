@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'signup' => "user#new"
+  post 'signup' => "user#create"
+
+  get "login" => "sessions#new"
+  post "login" => "sessions#create"
+
   root 'home#index'
   get '*path' => 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
