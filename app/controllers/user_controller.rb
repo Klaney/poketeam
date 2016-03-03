@@ -2,12 +2,14 @@ class UserController < ApplicationController
   def new
   	@user = User.new
   end
+
   def create
-    @user = User.create(user_params[:email], user_params[:password])
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#{@user}"
+    @user = User.create(user_params[:email], user_params[:password], user_params[:name])
     if @user
-    	@user.save
-      redirect_to @client
+    	@user = User.authenticate user_params[:email], user_params[:password]
+    	session[:user_id] = @user.id
+	    flash[:success] = "User logged in!!"
+      redirect_to root_path
     else
       # This line overrides the default rendering behavior, which
       # would have been to render the "create" view.
@@ -23,6 +25,6 @@ class UserController < ApplicationController
   private
 
 	def user_params
-	  params.require(:user).permit(:email, :password)
+	  params.require(:user).permit(:email, :password, :name)
 	end
 end

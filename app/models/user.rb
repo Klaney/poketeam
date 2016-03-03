@@ -13,12 +13,11 @@ class User < ActiveRecord::Base
     User.find_by_email(email).try(:authenticate, password)
   end
 
-  def self.create email, password
-  	puts email
-  	puts password
+  def self.create email, password, name
   	@user = User.new
   	@user.email = email
   	@user.password = password
+  	@user.name = name
   	@user.save
   end
 
