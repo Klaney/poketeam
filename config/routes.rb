@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :teams
+    end
+  end
 
-  get 'signup' => "user#new"
   post 'signup' => "user#create"
 
-  get "login" => "sessions#new"
+  post 'team' => "teams#create"
+
   post "login" => "sessions#create"
 
   root 'home#index'
   get '*path' => 'home#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

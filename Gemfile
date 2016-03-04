@@ -25,6 +25,8 @@ gem 'bower-rails'
 gem 'bcrypt', '~> 3.1.7'
 #Use Angular Rails templates to allow rails to use angular routing
 gem 'angular-rails-templates'
+# Gem to setup api
+gem 'responders'
 
 #FOR AUTH
 #email-validator

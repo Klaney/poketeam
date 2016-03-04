@@ -11,6 +11,13 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   .when('/team', {
   	templateUrl: 'team.html',
   	controller:'PkmnCtrl'
+  })
+  .when('/signup',{
+    templateUrl: 'signup.html',
+    controller: 'PkmnCtrl'
+  }).when('/login', {
+    templateUrl: 'login.html',
+    controller: 'PkmnCtrl'
   });
   $locationProvider.html5Mode(false).hashPrefix('!');
 }]);

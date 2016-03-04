@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
 
+	before_action :current_user
+	before_action :is_authenticated?
+	
   def new
   end
 
