@@ -1,6 +1,25 @@
 <h1>Here is where you add pokemon!</h1>
 <div ng-repeat="pokemon in pokemon">
-	<p>{{pokemon.name}}</p>
-	<a href="{{pokemon.url}}">more stuff</a>
-	
+	<h2>{{pokemon.name}}</h2>
+	<img src="{{pokemon.sprite}}">
+	<table>
+		<tr>
+			<td>Type:{{pokemon.maintype}}</td>
+			<td>SubType:{{pokemon.subtype}}</td>
+		</tr>
+		<tr>
+			<td>HP:{{pokemon.hp}}</td>
+		</tr>
+		<tr>
+			<td>Attack:{{pokemon.attack}}</td>
+			<td>Defense:{{pokemon.defense}}</td>
+		</tr>
+		<tr>
+			<td>Speed:{{pokemon.speed}}</td>
+		</tr>
+		<tr>
+			<td>Special Attack:{{pokemon.sattack}}</td>
+			<td>Special Defense:{{pokemon.sdefense}}</td>
+		</tr>
+	</table>
 </div>

@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303022219) do
+ActiveRecord::Schema.define(version: 20160314040902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pokedexes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "sprite"
+    t.integer  "speed"
+    t.integer  "sdefense"
+    t.integer  "sattack"
+    t.integer  "defense"
+    t.integer  "attack"
+    t.integer  "hp"
+    t.string   "maintype"
+    t.string   "subtype"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "pokedex_num"
+  end
 
   create_table "pokemons", force: :cascade do |t|
     t.string   "name"

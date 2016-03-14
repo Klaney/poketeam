@@ -33,6 +33,9 @@ gem 'angularjs-rails-resource'
 #FOR AUTH
 #email-validator
 gem 'email_validator'
+# Gem for making api calls
+gem "typhoeus"
+gem "rest-client"
 
 # Use Unicorn as the app server
 # gem 'unicorn'

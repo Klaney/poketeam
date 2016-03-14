@@ -39,20 +39,8 @@ angular.module('PokeCtrls',['PokeServices'])
 	'$http',
 	function($scope, $routeParams, kantoPokedex, $http){
 		$scope.pokemon = [];
-		$scope.pokeInfo = [];
-		kantoPokedex.get(function success(data){
-			$scope.pokemon = data.results;
-			console.log($scope.pokemon);
-			for(i = 0; i < $scope.pokemon.length; i++){
-				$http.get($scope.pokemon[i].url).then(function success(res){
-					console.log(res.data)
-				}, function error(error){
-					console.log(error);
-				});
-			}
-		}, function error(data){
-			console.log(data);
+		kantoPokedex.query(function success(data){
+			$scope.pokemon = data;
 		})
-
 	}
 ]);
