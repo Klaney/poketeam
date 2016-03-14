@@ -1,25 +1,37 @@
 <h1>Here is where you add pokemon!</h1>
-<div ng-repeat="pokemon in pokemon">
-	<h2>{{pokemon.name}}</h2>
-	<img src="{{pokemon.sprite}}">
-	<table>
-		<tr>
-			<td>Type:{{pokemon.maintype}}</td>
-			<td>SubType:{{pokemon.subtype}}</td>
-		</tr>
-		<tr>
-			<td>HP:{{pokemon.hp}}</td>
-		</tr>
-		<tr>
-			<td>Attack:{{pokemon.attack}}</td>
-			<td>Defense:{{pokemon.defense}}</td>
-		</tr>
-		<tr>
-			<td>Speed:{{pokemon.speed}}</td>
-		</tr>
-		<tr>
-			<td>Special Attack:{{pokemon.sattack}}</td>
-			<td>Special Defense:{{pokemon.sdefense}}</td>
-		</tr>
-	</table>
+<div class="container">
+	<div ng-repeat="pokemon in pokemon">
+		<div class="card">
+			<h2 class="card-title">{{pokemon.name}}</h2>
+			<img src="{{pokemon.sprite}}" class="card-pic">
+			<table>
+				<tr>
+					<td>Type:{{pokemon.maintype}}</td>
+					<td>SubType:{{pokemon.subtype}}</td>
+				</tr>
+				<tr>
+					<td>HP:{{pokemon.hp}}</td>
+				</tr>
+				<tr>
+					<td>Attack:{{pokemon.attack}}</td>
+					<td>Defense:{{pokemon.defense}}</td>
+				</tr>
+				<tr>
+					<td>Speed:{{pokemon.speed}}</td>
+				</tr>
+				<tr>
+					<td>Special Attack:{{pokemon.sattack}}</td>
+					<td>Special Defense:{{pokemon.sdefense}}</td>
+				</tr>
+			</table>
+			<form action="/pokemon" accept-charset="UTF-8" method="post">
+				<input name="utf8" type="hidden" value="✓">
+				<input type="hidden" name="authenticity_token" value="QbGyzYMOsMJxsqLSXbro0tnAgeMNTtkfzRrQ1sLifkdQkBUYoP7AO5VJfeLrkVsyTnv38GQ9jkqYLIMkd4vwCg==">
+				<input name="pokemon[name]" type="hidden" value="{{pokemon.name}}">
+				<input name="pokemon[pokeid]" type="hidden" value="{{pokemon.pokedex_num}}">
+				<input name="pokemon[team_id]" type="hidden" value="{{params.team_id}}">
+				<input type="submit" name="commit" value="Add Pokemon To Team!">
+			</form>
+		</div>
+	</div>
 </div>

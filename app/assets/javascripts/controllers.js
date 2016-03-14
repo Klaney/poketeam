@@ -42,5 +42,6 @@ angular.module('PokeCtrls',['PokeServices'])
 		kantoPokedex.query(function success(data){
 			$scope.pokemon = data;
 		})
+		$scope.params = $routeParams;
 	}
 ]);
