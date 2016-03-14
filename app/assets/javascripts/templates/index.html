@@ -1,9 +1,10 @@
 <header class="row">
   <h1 class="text-center col-md-6 col-md-offset-3">Build your Pokemon Team!</h1>
 </header>
+  {{currentUser}}
 <section class="row">
-  <a href="/#!/team">Team page</a>
-  <a href="/#!/signup">Sign up</a>
-  <a href="/#!/login">Login</a>
+  <p ng-hide="cookie.isLoggedIn">Hello!</p>
+  <p ng-show="cookie.isLoggedIn">Goodbye!</p>
+  {{cookie.isLoggedIn}}
   
 </section>

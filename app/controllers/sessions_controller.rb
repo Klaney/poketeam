@@ -1,24 +1,26 @@
 class SessionsController < ApplicationController
 
 	before_action :current_user
-	before_action :is_authenticated?
-	
+	before_action :is_authenticated?, except: [:create]
+
   def new
   end
 
   def create
   	@user = User.authenticate user_params[:email], user_params[:password]
   	if @user
-	    session[:user_id] = @user.id
+	    cookies[:user_id] = @user.id
 	    flash[:success] = "User logged in!!"
 	    redirect_to root_path
 	  else
-	    flash[:danger] = "Credentials Invalid!!"
-	    redirect_to login_path
+	    flash[:danger] = "create method Credentials Invalid!!"
+	    redirect_to root_path
 	  end
   end
 
   def destroy
+  	cookies.delete :user_id
+  	flash[:danger] = "User logged out"
   end
 
   private

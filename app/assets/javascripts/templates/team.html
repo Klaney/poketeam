@@ -1,7 +1,17 @@
 <h1>Welcome to the team page!</h1>
+	{{currentUser}}
+	
+
 <form action="/team" accept-charset="UTF-8" method="post">
 	<input name="utf8" type="hidden" value="✓">
 	<input type="hidden" name="authenticity_token" value="QbGyzYMOsMJxsqLSXbro0tnAgeMNTtkfzRrQ1sLifkdQkBUYoP7AO5VJfeLrkVsyTnv38GQ9jkqYLIMkd4vwCg==">
 	<input name="team[name]" type="text">
 	<input type="submit" name="commit" value="Create Team">
 </form>
+
+<div ng-repeat="team in teams | filter:userId">
+	<div class="team">
+		<h1>{{team.name}}</h1>
+		<a href="/#!/team/{{team.id}}/pokemon">Add Pokemon!</a>
+	</div>
+</div>

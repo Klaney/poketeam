@@ -1,4 +1,11 @@
-var app = angular.module('poketeam',['templates', 'ngRoute', 'controllers',]);
+var app = angular.module('poketeam',[
+  'templates', 
+  'ngRoute', 
+  'ngResource',
+  'ngCookies', 
+  'PokeCtrls', 
+  'PokeServices'
+]);
 
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -6,24 +13,28 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   $routeProvider
   .when('/', {
     templateUrl: 'index.html',
-    controller: 'PkmnCtrl'
+    controller: 'MainCtrl'
   })
   .when('/team', {
   	templateUrl: 'team.html',
-  	controller:'PkmnCtrl'
+  	controller:'TeamCtrl'
   })
   .when('/signup',{
     templateUrl: 'signup.html',
-    controller: 'PkmnCtrl'
-  }).when('/login', {
+    controller: 'MainCtrl'
+  })
+  .when('/login', {
     templateUrl: 'login.html',
+    controller: 'MainCtrl'
+  })
+  .when('/team/:team_id/pokemon',{
+    templateUrl:'addpokemon.html',
     controller: 'PkmnCtrl'
   });
   $locationProvider.html5Mode(false).hashPrefix('!');
 }]);
 
-controllers = angular.module('controllers',[])
-
-controllers.controller('PkmnCtrl', ['$scope', function($scope) {
-
+app.run(['$rootScope', 'cookieService', function ($rootScope, cookieService) {  
+    $rootScope.cookie = cookieService;
 }]);
+

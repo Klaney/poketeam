@@ -16,7 +16,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-  	@team = Team.create(team_params[:name], session[:user_id])
+  	@team = Team.create(team_params[:name], cookies[:user_id])
   	if @team
   		redirect_to "#!/team"
   	else

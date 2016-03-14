@@ -1,4 +1,11 @@
-<div ng-app="poketeam">
+<div>
+	<nav>
+		<a href="/#!/">Home</a>
+		<a href="/#!/team" >Team page</a>
+	  <a href="/#!/signup" ng-hide="cookie.isLoggedIn">Sign up</a>
+	  <a href="/#!/login" ng-hide="cookie.isLoggedIn">Login</a>
+	  <a ng-click="cookie.logout()" ng-show="cookie.isLoggedIn">Logout</a>
+	</nav>
   <div class="view-container">
     <div ng-view class="view-frame animate-view"></div>
   </div>

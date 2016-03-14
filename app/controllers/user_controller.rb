@@ -7,7 +7,7 @@ class UserController < ApplicationController
     @user = User.create(user_params[:email], user_params[:password], user_params[:name])
     if @user
     	@user = User.authenticate user_params[:email], user_params[:password]
-    	session[:user_id] = @user.id
+    	cookies[:user_id] = @user.id
 	    flash[:success] = "User logged in!!"
       redirect_to root_path
     else

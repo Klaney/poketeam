@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   post "login" => "sessions#create"
 
+  delete 'logout' => "sessions#destroy"
+
   root 'home#index'
   get '*path' => 'home#index'
 
