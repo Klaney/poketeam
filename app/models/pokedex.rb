@@ -1,4 +1,5 @@
 class Pokedex < ActiveRecord::Base
+	has_and_belongs_to_many :teams
 	def self.create name, sprite, speed, sdefense, sattack, defense, attack, hp, type, subtype, pokedex_num
 		@entry = Pokedex.new
 		@entry.name = name

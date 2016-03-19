@@ -3,7 +3,10 @@ module Api
 		class TeamsController < ApplicationController
 			respond_to :json
 			def index
-				respond_with Team.all
+				@teams = Team.all
+				respond_to { |format|
+					format.json {render :json => @teams.to_json(:include => :pokemon)}
+				}
 			end
 		end
 	end

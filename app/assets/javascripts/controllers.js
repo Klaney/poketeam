@@ -17,19 +17,27 @@ angular.module('PokeCtrls',['PokeServices'])
 	'$rootScope',
 	'cookieService', 
 	'teamService',
-	function($scope, $cookies, $rootScope,cookieService, teamService){
+	'kantoPokedex',
+	function($scope, $cookies, $rootScope,cookieService, teamService, kantoPokedex){
+	  $scope.teams=[];
+	  $scope.teamPokemon=[];
+
 		$rootScope.currentUser = $cookies.get("user_id");
+
 		$scope.userId = function(value){
 			return (($rootScope.currentUser).indexOf(value.user_id) !== -1)
-		}
+		};
 
-	  $scope.teams=[];
 	  teamService.query(function success(data){
 	  	$scope.teams = data;
 	  	console.log(data);
 	  }, function error(data){
 	  	console.log(data);
 	  });
+
+	  kantoPokedex.query(function success(data){
+			$scope.teamPokemon = data;
+		});
 	}
 ])
 .controller('PkmnCtrl', [

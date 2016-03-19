@@ -2,9 +2,11 @@ class PokemonController < ApplicationController
 	def create
 		@pokemon = Pokemon.create(pokemon_params[:name], pokemon_params[:pokeid], pokemon_params[:team_id])
 		if @pokemon
+			redirect_to "#!/team"
 			flash[:success] = "Pokemon added"
 		else
-			flash[:danger] = "Shit didn't work"
+			redirect_to "#!/team"
+			flash[:danger] = "You have too many pokemon in the team!"
 		end
 	end
 
