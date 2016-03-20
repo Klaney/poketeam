@@ -15,7 +15,9 @@
 		<h1>{{team.name}}</h1>
 		<div ng-repeat="poke in team.pokemon">
 			<div ng-repeat="pokemon in teamPokemon | filter:{{poke.pokeid}}">
-				<h3>{{pokemon.name}}</h3>
+				<div class="card">
+					<h3>{{pokemon.name}}</h3>
+				</div>
 			</div>
 		</div>
 		<a href="/#!/team/{{team.id}}/pokemon">Add Pokemon!</a>
