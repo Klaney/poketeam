@@ -7,7 +7,8 @@ angular.module('PokeCtrls',['PokeServices'])
 	'$route', 
 	'cookieService',
 	function($scope, $cookies, $window, $rootScope, $route, cookieService) {
-	  console.log($cookies.get("user_id"));
+	  console.log($cookies.get("XSRF-TOKEN"));
+	  $rootScope.xsrfToken = $cookies.get("XSRF-TOKEN")
 	  $rootScope.currentUser = $cookies.get("user_id");
 	}
 ])

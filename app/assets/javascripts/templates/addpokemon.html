@@ -26,7 +26,7 @@
 			</table>
 			<form action="/pokemon" accept-charset="UTF-8" method="post">
 				<input name="utf8" type="hidden" value="✓">
-				<input type="hidden" name="authenticity_token" value="QbGyzYMOsMJxsqLSXbro0tnAgeMNTtkfzRrQ1sLifkdQkBUYoP7AO5VJfeLrkVsyTnv38GQ9jkqYLIMkd4vwCg==">
+				<input type="hidden" name="authenticity_token" value="{{xsrfToken}}">
 				<input name="pokemon[name]" type="hidden" value="{{pokemon.name}}">
 				<input name="pokemon[pokeid]" type="hidden" value="{{pokemon.pokedex_num}}">
 				<input name="pokemon[team_id]" type="hidden" value="{{params.team_id}}">
