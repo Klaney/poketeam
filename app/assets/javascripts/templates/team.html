@@ -13,12 +13,12 @@
 <div ng-repeat="team in teams | filter:userId">
 	<div class="team">
 		<h1>{{team.name}}</h1>
-		<div ng-repeat="poke in team.pokemon">
-			<div ng-repeat="pokemon in teamPokemon | filter:{{poke.pokeid}}">
+		<div ng-repeat="poke in team.pokedexes">
+			<!-- <div ng-repeat="pokemon in teamPokemon | filter:{{poke.pokeid}}"> -->
 				<div class="card">
-					<h3>{{pokemon.name}}</h3>
+					<h3>{{poke.name}}</h3>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 		<a href="/#!/team/{{team.id}}/pokemon">Add Pokemon!</a>
 	</div>

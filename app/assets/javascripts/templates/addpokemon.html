@@ -24,7 +24,7 @@
 					<td>Special Defense:{{pokemon.sdefense}}</td>
 				</tr>
 			</table>
-			<form action="/pokemon" accept-charset="UTF-8" method="post">
+			<form action="/add_pokemon" accept-charset="UTF-8" method="post">
 				<input name="utf8" type="hidden" value="✓">
 				<input type="hidden" name="authenticity_token" value="{{xsrfToken}}">
 				<input name="pokemon[name]" type="hidden" value="{{pokemon.name}}">

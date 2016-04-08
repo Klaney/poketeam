@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   post 'team' => "teams#create"
 
+  post 'add_pokemon' => "teams#update"
+
   post 'pokemon' => "pokemon#create"
 
   post "login" => "sessions#create"
