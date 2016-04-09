@@ -34,10 +34,15 @@ class TeamsController < ApplicationController
   end
 
   def update
-  	team = Team.find pokemon_params[:team_id]
+  	@team = Team.find pokemon_params[:team_id]
   	pokedex = Pokedex.find_by pokedex_num: pokemon_params[:pokeid]
-  	team.pokedexes << pokedex
-	  redirect_to "#!/team"
+  	if @team.pokedexes.size == 6
+  		flash[:danger] = "You have reached the maximum amount of pokemon"
+  		redirect_to "#!/team"
+  	else
+  		@team.pokedexes << pokedex
+	  	redirect_to "#!/team"
+  	end
   end
 
 
