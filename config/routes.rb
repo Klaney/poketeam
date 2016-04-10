@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   post "login" => "sessions#create"
 
+  post 'team_pokedex' => "teams#destroy_pokedex"
+
   delete 'logout' => "sessions#destroy"
 
   root 'home#index'

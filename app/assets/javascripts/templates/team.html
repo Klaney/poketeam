@@ -16,7 +16,8 @@
 		<div ng-repeat="poke in team.pokedexes">
 			<!-- <div ng-repeat="pokemon in teamPokemon | filter:{{poke.pokeid}}"> -->
 				<div class="card">
-				<h3>{{poke.name}}</h3>
+					<h2 class="card-title">{{poke.name}}</h2>
+					<img src="{{poke.sprite}}" class="card-pic">
 					<table>
 						<tr>
 							<td>Type:{{poke.maintype}}</td>
@@ -37,6 +38,14 @@
 							<td>Special Defense:{{poke.sdefense}}</td>
 						</tr>
 					</table>
+					<form action="/team_pokedex" accept-charset="UTF-8" method="post">
+						<input name="utf8" type="hidden" value="✓">
+						<input type="hidden" name="authenticity_token" value="{{xsrfToken}}">
+						<input name="pokemon[name]" type="hidden" value="{{pokemon.name}}">
+						<input name="pokemon[pokeid]" type="hidden" value="{{poke.id}}">
+						<input name="team[id]" type="hidden" value="{{team.id}}">
+						<input type="submit" name="commit" value="Remove this POkemon from Team">
+					</form>
 				</div>
 			<!-- </div> -->
 		</div>

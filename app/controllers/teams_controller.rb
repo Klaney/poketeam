@@ -45,12 +45,19 @@ class TeamsController < ApplicationController
   	end
   end
 
+  def destroy_pokedex
+  	team = Team.find(team_params[:id])
+  	pokemon = Pokedex.find pokemon_params[:pokeid]
+  	team.pokedexes.delete(pokemon)
+  	redirect_to "#!/team"
+  end
+
 
 
   private
 
 	def team_params
-	  params.require(:team).permit(:name)
+	  params.require(:team).permit(:name, :id)
 	end
 
 	def pokemon_params
