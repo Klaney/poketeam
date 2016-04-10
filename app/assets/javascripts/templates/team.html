@@ -16,10 +16,30 @@
 		<div ng-repeat="poke in team.pokedexes">
 			<!-- <div ng-repeat="pokemon in teamPokemon | filter:{{poke.pokeid}}"> -->
 				<div class="card">
-					<h3>{{poke.name}}</h3>
+				<h3>{{poke.name}}</h3>
+					<table>
+						<tr>
+							<td>Type:{{poke.maintype}}</td>
+							<td>SubType:{{poke.subtype}}</td>
+						</tr>
+						<tr>
+							<td>HP:{{poke.hp}}</td>
+						</tr>
+						<tr>
+							<td>Attack:{{poke.attack}}</td>
+							<td>Defense:{{poke.defense}}</td>
+						</tr>
+						<tr>
+							<td>Speed:{{poke.speed}}</td>
+						</tr>
+						<tr>
+							<td>Special Attack:{{poke.sattack}}</td>
+							<td>Special Defense:{{poke.sdefense}}</td>
+						</tr>
+					</table>
 				</div>
 			<!-- </div> -->
 		</div>
-		<a href="/#!/team/{{team.id}}/pokemon">Add Pokemon!</a>
+		<a href="/#!/team/{{team.id}}/pokemon" ng-show="team.pokedexes.length<6">Add Pokemon!</a>
 	</div>
 </div>
