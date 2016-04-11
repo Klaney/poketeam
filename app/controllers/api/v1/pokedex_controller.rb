@@ -3,7 +3,7 @@ module Api
 		class PokedexController < ApplicationController
 			respond_to :json
 			def index
-				respond_with Pokedex.all.order("id") 
+				respond_with Pokedex.all.order("pokedex_num") 
 			end
 		end
 	end

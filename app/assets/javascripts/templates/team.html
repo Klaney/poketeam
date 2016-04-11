@@ -12,6 +12,12 @@
 
 <div ng-repeat="team in teams | filter:userId"  class="team">
 	<h1>{{team.name}}</h1>
+	<form class="form" ng-submit="deleteTeam()">
+	  <div class="form-group">
+	    <input type="text" value="" ng-model="teamId">
+	    <input type="submit" value="Delete this team" class="btn btn-primary">
+  	</div>
+	</form>
 	<div ng-repeat="poke in team.pokedexes">
 		<div class="card">
 			<h2 class="card-title">{{poke.name}}</h2>

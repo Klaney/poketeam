@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post 'signup' => "user#create"
 
   post 'team' => "teams#create"
+  delete 'team/:id' => "teams#destroy"
 
   post 'add_pokemon' => "teams#update"
 

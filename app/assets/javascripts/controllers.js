@@ -19,8 +19,27 @@ angular.module('PokeCtrls',['PokeServices'])
 	'cookieService', 
 	'teamService',
 	'kantoPokedex',
-	function($scope, $cookies, $rootScope,cookieService, teamService, kantoPokedex){
+	'$http',
+	'$route',
+	function($scope, $cookies, $rootScope,cookieService, teamService, kantoPokedex, $http, $route){
 	  $scope.teams=[];
+	  $scope.teamId=8;
+
+	  $scope.deleteTeam = function(){
+	  	var req = {
+		    url: "/team/"+$scope.teamId,
+		    method: 'DELETE'
+	  	}
+			$http(req).then(function success(res) {
+		    //do something with the response if successful
+		    console.log("It succeeded!");
+		    $route.reload();
+		  }, function error(res) {
+		    //do something if the response has an error
+		    $route.reload();
+		  });
+		}
+
 
 		$rootScope.currentUser = $cookies.get("user_id");
 

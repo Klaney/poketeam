@@ -7,7 +7,6 @@ var app = angular.module('poketeam',[
   'PokeServices'
 ]);
 
-
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   //define routes
   $routeProvider
