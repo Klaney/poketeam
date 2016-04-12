@@ -23,14 +23,10 @@ angular.module('PokeCtrls',['PokeServices'])
 	'$route',
 	function($scope, $cookies, $rootScope,cookieService, teamService, kantoPokedex, $http, $route){
 	  $scope.teams=[];
-	  $scope.teamId=8;
 
-	  $scope.deleteTeam = function(){
-	  	var req = {
-		    url: "/team/"+$scope.teamId,
-		    method: 'DELETE'
-	  	}
-			$http(req).then(function success(res) {
+	  $scope.deleteTeam = function(index){
+	  	var req = "/team/"+ index;
+			$http.delete(req).then(function success(res) {
 		    //do something with the response if successful
 		    console.log("It succeeded!");
 		    $route.reload();

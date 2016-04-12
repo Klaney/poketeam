@@ -30,7 +30,11 @@ class TeamsController < ApplicationController
 
   def destroy
   	Team.find(params[:id]).delete
-  	redirect_to "#!/team"
+  	respond_to do |format|
+      format.html { redirect_to "#!/team" }
+      format.json { head :no_content }
+      format.js   { render :layout => false }
+    end
   end
 
   def update
