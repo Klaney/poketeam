@@ -29,7 +29,6 @@ gem 'angular-rails-templates'
 gem 'responders'
 
 gem 'angularjs-rails-resource'
-
 #FOR AUTH
 #email-validator
 gem 'email_validator'
