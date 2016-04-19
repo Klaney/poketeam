@@ -1,0 +1,11 @@
+@mixin card-defaults($minwidth, $width){
+	@media (min-width: $minwidth) {
+		.card{
+			float: left;
+			height: 20%;
+			border: 1px solid black;
+			box-sizing: border-box;
+			width: $width;	
+		}
+	}
+}

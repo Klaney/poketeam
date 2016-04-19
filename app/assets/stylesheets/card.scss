@@ -1,35 +1,14 @@
 @import "vars";
+@import "mixins";
+
+@include card-defaults(100px, $half);
+@include card-defaults(720px, $third);
+@include card-defaults(1080px, $fifth);
 
 .container {
 	margin:0 10% 0 10%;
 }
-@media (min-width: 100px) {
-  .card {
-  	float:left;
-		height:20%;
-		border:$card-border;
-		box-sizing: border-box;
-    width:$half;
-  }
-}
-@media (min-width: 720px) {
-  .card {
-  	float:left;
-		height:20%;
-		border:1px solid black;
-		box-sizing: border-box;
-    width:$third;
-  }
-}
-@media (min-width: 1080px){
-	.card {
-		float:left;
-		width:$fifth;
-		height:20%;
-		border:1px solid black;
-		box-sizing: border-box;
-	}
-}
-.card-title{
+
+.card-title {
 	text-align: center;
 }
