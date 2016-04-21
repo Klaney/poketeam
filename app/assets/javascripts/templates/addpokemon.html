@@ -2,7 +2,7 @@
 <div class="flex-center">
 	<div ng-repeat="pokemon in pokemon">
 		<div class="card {{pokemon.maintype}}">
-			<h2 class="card-title">{{pokemon.name}}</h2>
+			<h2 class="card-title">{{pokemon.name.upperCaseFirst()}}</h2>
 			<img src="{{pokemon.sprite}}" class="card-pic">
 			<table>
 				<tr>
