@@ -1,8 +1,8 @@
-.container {
-	width:100%;
-	text-align: center;
-}
 
-.team {
-	display: inline-block;
+.flex-center{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-flow: row wrap; 
+	flex-shrink: 1 0 auto;
 }

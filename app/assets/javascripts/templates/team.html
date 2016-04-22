@@ -12,8 +12,9 @@
 	<div ng-repeat="team in teams | filter:userId"  class="team">
 		<h1>{{team.name}}</h1>
 		<button class="form" ng-click="deleteTeam(team.id)">delete this team $id</button>
-<div class="container">
+		<div class="flex-center">
 		<div class ="pokemon" ng-repeat="poke in team.pokedexes">
+			
 			<div class="card {{poke.maintype}}">
 				<h2 class="card-title">{{poke.name}}</h2>
 				<img src="{{poke.sprite}}" class="card-pic">
@@ -46,7 +47,7 @@
 					<input type="submit" name="commit" value="Remove this Pokemon from Team">
 				</form>
 			</div>
+			</div>
 		</div>
-</div>
 		<a href="/#!/team/{{team.id}}/pokemon" ng-show="team.pokedexes.length<6">Add Pokemon!</a>
 	</div>
