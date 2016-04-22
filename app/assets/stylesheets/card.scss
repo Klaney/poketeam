@@ -3,12 +3,152 @@
 
 @include card-defaults(100px, $half);
 @include card-defaults(720px, $third);
-@include card-defaults(1080px, $fifth);
-
-.container {
-	margin:0 10% 0 10%;
-}
+@include card-defaults(1080px, $fourth);
 
 .card-title {
 	text-align: center;
+}
+
+.fire {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      red
+    );
+}
+
+.water {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      blue
+    );
+}
+
+.rock {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      gray
+    );
+}
+
+.grass {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      green
+    );
+}
+
+.flying {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      #54FBFF
+    );
+}
+
+.psychic {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      purple
+    );
+}
+
+.fighting {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      orange
+    );
+}
+
+.ground {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      brown
+    );
+}
+
+.bug {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      #C5FF5A
+    );
+}
+
+.fairy {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      pink
+    );
+}
+
+.poison {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      #A99BFF
+    );
+}
+
+.electric {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      yellow
+    );
+}
+
+.ice {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      #23FFFE
+    );
+}
+
+.dragon {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      #7561FF
+    );
+}
+
+.ghost {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      #894F7F
+    );
+}
+
+.normal {
+	background-image:
+    radial-gradient(
+      circle,
+      white,
+      #ADBEBC
+    );
 }

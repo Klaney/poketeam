@@ -1,7 +1,7 @@
 <h1>Here is where you add pokemon!</h1>
 <div class="container">
-	<div ng-repeat="pokemon in pokemon">
-		<div class="card">
+	<div class = "pokemon" ng-repeat="pokemon in pokemon">
+		<div class="card {{pokemon.maintype}}">
 			<h2 class="card-title">{{pokemon.name}}</h2>
 			<img src="{{pokemon.sprite}}" class="card-pic">
 			<table>

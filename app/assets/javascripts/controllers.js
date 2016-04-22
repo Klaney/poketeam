@@ -69,17 +69,17 @@ angular.module('PokeCtrls',['PokeServices'])
 	'$rootScope',
 	'$cookies',
 	function($scope, $routeParams, kantoPokedex, $http, $rootScope, $cookies){
-		$scope.pokemon = [];
-
+		$scope.pokemon;
+		$scope.params = $routeParams;
 		var updateToken = function(){
 			$rootScope.xsrfToken = $cookies.get("XSRF-TOKEN");
 		}
-		updateToken();
-
 
 		kantoPokedex.query(function success(data){
 			$scope.pokemon = data;
+			console.log($scope.pokemon)
 		})
-		$scope.params = $routeParams;
+
+		updateToken();
 	}
 ]);

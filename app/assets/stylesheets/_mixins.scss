@@ -1,11 +1,15 @@
 @mixin card-defaults($minwidth, $width){
 	@media (min-width: $minwidth) {
 		.card{
+			font-family:"Open Sans", sans-serif;
+			margin:1% 1% 1% 1%;
+			text-align:center;
 			float: left;
-			height: 20%;
-			border: 1px solid black;
+			height: 370px;
+			border: 5px solid #F7D035;
 			box-sizing: border-box;
-			width: $width;	
+			width: $width;
+			border-radius:5px;	
 		}
 	}
 }

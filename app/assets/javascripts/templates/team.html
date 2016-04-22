@@ -9,43 +9,44 @@
 	<input type="submit" name="commit" value="Create Team">
 </form>
 
-
-<div ng-repeat="team in teams | filter:userId"  class="team">
-	<h1>{{team.name}}</h1>
-	<button class="form" ng-click="deleteTeam(team.id)">delete this team $id</button>
-	<div ng-repeat="poke in team.pokedexes">
-		<div class="card">
-			<h2 class="card-title">{{poke.name}}</h2>
-			<img src="{{poke.sprite}}" class="card-pic">
-			<table>
-				<tr>
-					<td>Type:{{poke.maintype}}</td>
-					<td>SubType:{{poke.subtype}}</td>
-				</tr>
-				<tr>
-					<td>HP:{{poke.hp}}</td>
-				</tr>
-				<tr>
-					<td>Attack:{{poke.attack}}</td>
-					<td>Defense:{{poke.defense}}</td>
-				</tr>
-				<tr>
-					<td>Speed:{{poke.speed}}</td>
-				</tr>
-				<tr>
-					<td>Special Attack:{{poke.sattack}}</td>
-					<td>Special Defense:{{poke.sdefense}}</td>
-				</tr>
-			</table>
-			<form action="/team_pokedex" accept-charset="UTF-8" method="post">
-				<input name="utf8" type="hidden" value="✓">
-				<input type="hidden" name="authenticity_token" value="{{xsrfToken}}">
-				<input name="pokemon[name]" type="hidden" value="{{pokemon.name}}">
-				<input name="pokemon[pokeid]" type="hidden" value="{{poke.id}}">
-				<input name="team[id]" type="hidden" value="{{team.id}}">
-				<input type="submit" name="commit" value="Remove this Pokemon from Team">
-			</form>
+	<div ng-repeat="team in teams | filter:userId"  class="team">
+		<h1>{{team.name}}</h1>
+		<button class="form" ng-click="deleteTeam(team.id)">delete this team $id</button>
+<div class="container">
+		<div class ="pokemon" ng-repeat="poke in team.pokedexes">
+			<div class="card {{poke.maintype}}">
+				<h2 class="card-title">{{poke.name}}</h2>
+				<img src="{{poke.sprite}}" class="card-pic">
+				<table>
+					<tr>
+						<td>Type:{{poke.maintype}}</td>
+						<td>SubType:{{poke.subtype}}</td>
+					</tr>
+					<tr>
+						<td>HP:{{poke.hp}}</td>
+					</tr>
+					<tr>
+						<td>Attack:{{poke.attack}}</td>
+						<td>Defense:{{poke.defense}}</td>
+					</tr>
+					<tr>
+						<td>Speed:{{poke.speed}}</td>
+					</tr>
+					<tr>
+						<td>Special Attack:{{poke.sattack}}</td>
+						<td>Special Defense:{{poke.sdefense}}</td>
+					</tr>
+				</table>
+				<form action="/team_pokedex" accept-charset="UTF-8" method="post">
+					<input name="utf8" type="hidden" value="✓">
+					<input type="hidden" name="authenticity_token" value="{{xsrfToken}}">
+					<input name="pokemon[name]" type="hidden" value="{{pokemon.name}}">
+					<input name="pokemon[pokeid]" type="hidden" value="{{poke.id}}">
+					<input name="team[id]" type="hidden" value="{{team.id}}">
+					<input type="submit" name="commit" value="Remove this Pokemon from Team">
+				</form>
+			</div>
 		</div>
-	</div>
-	<a href="/#!/team/{{team.id}}/pokemon" ng-show="team.pokedexes.length<6">Add Pokemon!</a>
 </div>
+		<a href="/#!/team/{{team.id}}/pokemon" ng-show="team.pokedexes.length<6">Add Pokemon!</a>
+	</div>

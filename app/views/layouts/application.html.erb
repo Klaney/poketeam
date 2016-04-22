@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="poketeam">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <head>
   <title>Poketeam</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -7,9 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render "partials/flash" %>
-
-<%= yield %>
-
+	<%= render "partials/flash" %>
+	<%= yield %>
 </body>
 </html>

@@ -26,8 +26,11 @@ angular.module('PokeServices',[])
 	return $resource("/api/v1/teams");
 }])
 .factory('kantoPokedex', ['$resource', function($resource){
-	return $resource(
+	var pokedex = $resource(
 		"/api/v1/pokedex/",
 		{'query': {method:'GET', isArray: true}}
 	);
+
+	console.log(pokedex);
+	return pokedex
 }]);
