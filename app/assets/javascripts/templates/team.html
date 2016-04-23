@@ -10,8 +10,8 @@
 </form>
 <div class="flex-center">
 	<div ng-repeat="team in teams | filter:userId"  class="team">
-		<button class="form" ng-click="deleteTeam(team.id)">delete this team $id</button>
 		<div class ="team-card fire">
+			<button class="form" ng-click="deleteTeam(team.id)">delete this team $id</button>
 			<h1>{{team.name}}</h1>
 			<div class="flex-center">
 				<div class ="pokemon" ng-repeat="poke in team.pokedexes">
@@ -27,6 +27,6 @@
 					</form>
 				</div>
 			</div>
+			<a href="/#!/team/{{team.id}}/pokemon" ng-show="team.pokedexes.length<6">Add Pokemon!</a>
 		</div>
-		<a href="/#!/team/{{team.id}}/pokemon" ng-show="team.pokedexes.length<6">Add Pokemon!</a>
 	</div>
