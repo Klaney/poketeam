@@ -15,7 +15,7 @@
 			<h1>{{team.name}}</h1>
 			<div class="flex-center">
 				<div class ="pokemon" ng-repeat="poke in team.pokedexes">
-					<h3>{{poke.name}}</h3>
+					<h2>{{poke.name.upperCaseFirst()}}</h2>
 					<img src="{{poke.sprite}}">
 					<form action="/team_pokedex" accept-charset="UTF-8" method="post">
 						<input name="utf8" type="hidden" value="✓">
