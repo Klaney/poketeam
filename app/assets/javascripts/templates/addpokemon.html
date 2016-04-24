@@ -6,8 +6,8 @@
 			<img src="{{pokemon.sprite}}" class="card-pic">
 			<table>
 				<tr>
-					<td>Type:{{pokemon.maintype}}</td>
-					<td>SubType:{{pokemon.subtype}}</td>
+					<td>Type:{{pokemon.maintype.upperCaseFirst()}}</td>
+					<td>SubType:{{pokemon.subtype.upperCaseFirst()}}</td>
 				</tr>
 				<tr>
 					<td>HP:{{pokemon.hp}}</td>
