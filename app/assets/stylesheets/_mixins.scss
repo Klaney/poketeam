@@ -1,4 +1,4 @@
-@mixin card-defaults($minwidth, $width){
+@mixin card-defaults($minwidth, $width, $height){
 	@media (min-width: $minwidth) {
 		.card{
 			font-family:"Open Sans", sans-serif;
@@ -7,7 +7,8 @@
 			float: left;
 			border: 5px solid #F7D035;
 			box-sizing: border-box;
-			flex-basis: $width;
+			width: $width;
+			height: $height;
 			border-radius:5px;	
 			flex-shrink: 1;
 			flex-grow: 1;
@@ -19,7 +20,8 @@
 			float: left;
 			border: 5px solid #F7D035;
 			box-sizing: border-box;
-			flex-basis: $width;
+			width: $width;
+			height: $height;
 			border-radius:5px;	
 			flex-shrink: 1 0 auto;
 		}

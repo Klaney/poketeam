@@ -1,9 +1,9 @@
 @import "vars";
 @import "mixins";
 
-@include card-defaults(100px, $half);
-@include card-defaults(720px, $third);
-@include card-defaults(1080px, $fourth);
+@include card-defaults(100px, 300px, 400px);
+@include card-defaults(720px, 300px, 400px);
+@include card-defaults(1080px, 300px, 400px);
 
 .card-title {
 	text-align: center;
