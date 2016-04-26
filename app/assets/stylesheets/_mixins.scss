@@ -20,10 +20,14 @@
 			float: left;
 			border: 5px solid #F7D035;
 			box-sizing: border-box;
-			width: $width;
-			height: $height;
 			border-radius:5px;	
 			flex-shrink: 1 0 auto;
+		}
+		.team-card:nth-child(odd){
+			background-color:  blue;
+		}
+		.team-card:nth-child(even){
+			background-color: red;
 		}
 	}
 }

@@ -10,7 +10,7 @@
 </form>
 <div class="flex-center">
 	<div ng-repeat="team in teams | filter:userId"  class="team">
-		<div class ="team-card fire">
+		<div class ="team-card">
 			<button class="form" ng-click="deleteTeam(team.id)">delete this team $id</button>
 			<h1>{{team.name}}</h1>
 			<div class="flex-center">
