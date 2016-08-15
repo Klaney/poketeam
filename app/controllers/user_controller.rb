@@ -16,11 +16,6 @@ class UserController < ApplicationController
       redirect_to signup_path
     end
   end
-  # def create
-  # 	@user = User.create user_params[:email], user_params[:password] 
-  # 	# user_params[:email], user_params[:password]
-  # 	redirect_to root_path
-  # end
 
   private
 

@@ -30,7 +30,6 @@ class TeamsController < ApplicationController
 
   def destroy
   	result = Team.destroy params[:id]
-    
     respond_to do |format|
       format.html {redirect_to "#!/teams"}
       format.json {render json: result}
@@ -55,8 +54,6 @@ class TeamsController < ApplicationController
   	team.pokedexes.delete(pokemon)
   	redirect_to "#!/team"
   end
-
-
 
   private
 
